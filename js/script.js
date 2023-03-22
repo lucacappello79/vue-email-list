@@ -6,31 +6,25 @@ createApp({
 
         return {
 
-            message: '',
-            messaggio: '',
+            email: [],
 
         };
 
     },
 
         created() {
+
+            for (let i = 0; i < 10; i++) {
   
-            // richiesta API
-
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res) => {
+
                 console.log(res.data.response);
+                console.log(res);
 
-                this.message = res.data.response;
+                this.email.push(res.data.response);
             })
+        }
 
-            // axios.get('https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items=10').then((res) => {
-            //     console.log(res);
-        
-            //     // lo assegno alla mia proprietà
-            //     this.message = res.data.response;
-        
-            // });
-        
         },
 
 }).mount('#app')

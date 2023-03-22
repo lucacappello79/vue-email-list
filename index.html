@@ -19,8 +19,13 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-    {{message}}
+
+    <ul>
+        <li v-for="(item, index) in email">{{item}}</li>
+    </ul>
+
 </div>
+
 
 <!--  ---JAVASCRIPT -->
 <script type="text/javascript" src="js/script.js"></script>   
