@@ -20,9 +20,19 @@
 
 <div id="app">
 
-    <ul>
-        <li v-for="(item, index) in email">{{item}}</li>
-    </ul>
+    <div v-if="maxEmailAllowed === counter">
+
+        <ul>
+            <li v-for="(item, index) in email">{{item}}</li>
+        </ul>
+
+    </div>
+
+    <div v-else>
+
+        <p>Generating email addresses...</p>
+
+    </div>
 
 </div>
 
